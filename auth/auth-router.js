@@ -66,10 +66,10 @@ router.post("/login", (req, res) => {
   }
 });
 
-function makeJwt({ id, username, department }) {
+function makeJwt({ id, username }) {
   const payload = {
     username,
-    subject: id,
+    id,
   };
   const config = {
     jwtSecret: process.env.JWT_SECRET || "is it secret, is it safe?",
